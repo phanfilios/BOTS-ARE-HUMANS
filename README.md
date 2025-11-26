@@ -18,3 +18,5 @@ simulación de sensores y análisis automático de datos.
 
 ```bash
 git clone https://github.com/phanfilios
+execute
+python examples/run_network.py
