@@ -1,9 +1,0 @@
-from core.Bot_Base import Bot
-
-class AlertLoggerBot(Bot):
-    """Registra todas las alertas generadas."""
-    def __init__(self, name, bus):
-        super().__init__(name, bus, topics=["alert"])
-
-    def handle_message(self, msg):
-        print(f"[{self.name}] Registrando alerta: {msg.payload}")
