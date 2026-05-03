@@ -9,6 +9,8 @@ minimalista.
 - Recibe informacion como CSV, tabla Markdown, pares `campo: valor` o texto libre.
 - Normaliza esa informacion en una especificacion interna.
 - Crea un archivo `.xlsx` con hoja de resumen, tabla con estilo, filtros y columnas ajustadas.
+- Detecta reportes de ventas con `Producto`, `Cantidad` y `Precio`.
+- Calcula la columna `Total`, agrega `Total general` y crea un grafico por producto.
 - Emite eventos de progreso para que una UI pueda mostrar la creacion en tiempo real.
 
 ## Estructura
@@ -22,6 +24,7 @@ src/excel_agent/
   models.py     Modelos compartidos.
 examples/
   ventas.csv
+  ventas_v2.csv
 tests/
 ```
 
@@ -52,6 +55,28 @@ Tambien puedes ejecutarlo sin instalar el comando:
 ```bash
 python -m excel_agent.cli -i examples/ventas.csv -o outputs/ventas.xlsx
 ```
+
+## Ejemplo v2: ventas
+
+```bash
+python -m excel_agent.cli -i examples/ventas_v2.csv -o outputs/ventas_v2.xlsx -t "Reporte de ventas v2"
+```
+
+Si el archivo tiene estas columnas:
+
+```csv
+Producto,Cantidad,Precio
+Teclado,12,35.5
+Mouse,18,19.9
+Monitor,5,149.99
+```
+
+El agente crea:
+
+- Hoja `Ventas`.
+- Columna `Total` con formulas como `=B2*C2`.
+- Fila `Total general` con `=SUM(...)`.
+- Grafico de barras por producto.
 
 ## Vision
 
