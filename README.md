@@ -9,6 +9,9 @@ Este es la vercion 1.1.1 del sistema de  bots execel se busca crear un agente de
 - Crea un archivo `.xlsx` con hoja de resumen, tabla con estilo, filtros y columnas ajustadas.
 - Emite eventos de progreso para que una UI pueda mostrar la creacion en tiempo real.
 
+  <img width="954" height="722" alt="image" src="https://github.com/user-attachments/assets/ce910eb1-5e8a-44bd-b697-532676ea2442" />
+
+
 ## Estructura
 
 ```text
