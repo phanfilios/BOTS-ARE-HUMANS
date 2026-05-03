@@ -1,8 +1,6 @@
 # Excel Agent
 
-Sistema local para convertir informacion en libros de Excel de forma visible,
-paso a paso, como una base para un futuro agente con interfaz elegante y
-minimalista.
+Este es la vercion 1.1.1 del sistema de  bots execel se busca crear un agente de IA semejante a chat gpt codex que en ves de crear codigo este bot crea tablas de execel y libros de excel demanera detallada en base a informavion en tiempo real 
 
 ## Que hace ahora
 
