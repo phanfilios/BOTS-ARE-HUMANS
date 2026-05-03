@@ -1,0 +1,2 @@
+[console_scripts]
+excel-agent = excel_agent.cli:main

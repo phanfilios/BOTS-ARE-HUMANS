@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/excel_agent/__init__.py
+src/excel_agent/agent.py
+src/excel_agent/builder.py
+src/excel_agent/cli.py
+src/excel_agent/models.py
+src/excel_agent/parser.py
+src/excel_agent.egg-info/PKG-INFO
+src/excel_agent.egg-info/SOURCES.txt
+src/excel_agent.egg-info/dependency_links.txt
+src/excel_agent.egg-info/entry_points.txt
+src/excel_agent.egg-info/requires.txt
+src/excel_agent.egg-info/top_level.txt
+tests/test_agent.py
+tests/test_parser.py
