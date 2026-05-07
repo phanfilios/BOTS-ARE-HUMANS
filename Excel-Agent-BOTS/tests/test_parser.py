@@ -13,3 +13,25 @@ def test_parse_key_values():
 
     assert spec.tables[0].title == "Resumen"
     assert spec.tables[0].rows == [["Cliente", "ACME"], ["Total", 120.5]]
+
+
+def test_parse_sales_table_adds_total_column():
+    spec = InformationParser().parse("Producto,Cantidad,Precio\nTeclado,2,10\nMouse,3,5")
+
+    table = spec.tables[0]
+    assert table.title == "Ventas"
+    assert table.headers == ["Producto", "Cantidad", "Precio", "Total"]
+    assert table.rows == [["Teclado", 2, 10, 20], ["Mouse", 3, 5, 15]]
+    assert table.metadata["chart"] == "product_total"
+
+
+def test_parse_sales_instruction_creates_template():
+    spec = InformationParser().parse(
+        "Quiero una tabla de ventas con producto, cantidad, precio, total, total general y grafico por producto."
+    )
+
+    table = spec.tables[0]
+    assert table.title == "Ventas"
+    assert table.headers == ["Producto", "Cantidad", "Precio", "Total"]
+    assert table.row_count == 5
+    assert table.metadata["template"] is True

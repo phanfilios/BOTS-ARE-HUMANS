@@ -18,6 +18,7 @@ class TableSpec:
     title: str
     headers: list[str]
     rows: list[list[Any]]
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     @property
     def row_count(self) -> int:
